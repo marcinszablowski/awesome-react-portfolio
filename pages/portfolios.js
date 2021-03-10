@@ -1,15 +1,19 @@
 import React from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 import BaseLayout from "../components/layouts/BaseLayout";
 
 class Portfolios extends React.Component {
   //Fetch data to initial props using Axios
   static async getInitialProps() {
-    const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    const data = await res.data;
-
-    return {posts: data};
+    try {
+      const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      const data = await res.data;
+      return {posts: data};
+    } catch {
+      console.error("Could not fetch the data.");
+    }
   };
 
   render() {
@@ -19,8 +23,15 @@ class Portfolios extends React.Component {
         <h1>Portfolios</h1>
         <ul>
           {postsData.map(post => (
-            <li key={post.id}>
-              {post.title}
+            <li
+              key={post.id}
+              style={{'fontSize': '20px'}}
+            >
+              <Link as={`/portfolios/${post.id}`} href={`/portfolios/[id]`}>
+                <a>
+                  {post.title}
+                </a>
+              </Link>
             </li>
           ))}
         </ul>
