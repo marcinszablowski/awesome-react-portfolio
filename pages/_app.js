@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+//Component responsible for rendering all the other pages
+function MyApp({Component, pageProps}) {
   return <Component {...pageProps} />
 }
 
