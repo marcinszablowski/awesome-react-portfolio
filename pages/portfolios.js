@@ -6,6 +6,7 @@ import BaseLayout from "../components/layouts/BaseLayout";
 
 class Portfolios extends React.Component {
   //Fetch data to initial props using Axios
+  //💡When getInitialProps is called id _app.js this getInitialProps is not called
   static async getInitialProps() {
     try {
       const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
