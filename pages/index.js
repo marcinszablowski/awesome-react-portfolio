@@ -1,5 +1,7 @@
-import BaseLayout from "../components/layouts/BaseLayout";
 import {Row, Col, Container} from "reactstrap";
+import Typed from 'react-typed';
+
+import BaseLayout from "../components/layouts/BaseLayout";
 
 export default function Home() {
   return (
@@ -36,6 +38,21 @@ export default function Home() {
                   Welcome to the portfolio website of Filip Jerga.
                   Get informed, collaborate and discover projects I was working on through the years!
                 </h1>
+                <Typed
+                  loop
+                  strings={[
+                    'React',
+                    'Angular',
+                    'Vue',
+                    'Svelte']}
+                  typeSpeed={70}
+                  backSpeed={70}
+                  backDelay={1000}
+                  showCursor
+                  cursorChar="|"
+                  className="self-typed"
+                >
+                </Typed>
               </div>
               <div className="hero-welcome-bio">
                 <h2>
