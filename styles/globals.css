@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.base-wrapper {
+  padding: 1em;
+}

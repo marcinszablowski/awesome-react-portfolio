@@ -1,12 +1,13 @@
 import React from 'react';
+
 import Header from "../shared/Header";
 
 const BaseLayout = props => {
   return (
-    <>
-      <Header />
+    <div className="base-wrapper">
+      <Header/>
       {props.children}
-    </>
+    </div>
   );
 };
 
